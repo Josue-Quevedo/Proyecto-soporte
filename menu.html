@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Técnico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkLogin()">
+
+    <aside class="sidebar">
+        <h2>Solicitudes</h2>
+    </aside>
+
+    <main class="content">
+        <header class="banner">
+            <h1>¡Bienvenido!</h1>
+            <p>Aquí puedes gestionar tus solicitudes de soporte técnico.</p>
+        </header>
+
+        <div class="buttons">
+            <button class="btn">Historial</button>
+            <button class="btn">Contacto</button>
+            <button class="btn" onclick="logout()">Cerrar sesión</button>
+        </div>
+
+        <section class="ticket-list">
+            <div class="ticket">
+                <h3>Solicitud: Ayuda con iniciar sesión</h3>
+                <p><strong>Estado:</strong> En proceso - 24/01/2025</p>
+                <p>Buenas tardes, me gustaría obtener ayuda para iniciar sesión en la página.</p>
+            </div>
+            <div class="ticket">
+                <h3>Solicitud: Página web error 404</h3>
+                <p><strong>Estado:</strong> Resuelto - 10/01/2025</p>
+                <p>Buenas noches, tengo un error en mi página web donde sale "error 404" y no puedo acceder.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
