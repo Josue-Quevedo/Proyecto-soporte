@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Evita el envío del formulario
+            event.preventDefault(); // no hace reenvio de formulario
 
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
-            // Simulación de autenticación básica
+            // simulacion de autenticación basica
             if (name && email && password) {
-                // Guardar usuario en localStorage (simulación de sesión)
+                // minisimulacion de un usuario
                 localStorage.setItem("user", name);
-                window.location.href = "menu.html"; // Redirige al menú
+                window.location.href = "menu2.html"; // regreso al menu principal
             } else {
                 alert("Por favor, complete todos los campos.");
             }
@@ -21,16 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Proteger el menú (redirigir al login si no hay sesión)
+//funcion para redirigir al menu si no hay login
 function checkLogin() {
     const user = localStorage.getItem("user");
     if (!user) {
-        window.location.href = "index.html"; // Redirige al login
+        window.location.href = "index.html"; // regreso al login
     }
 }
 
-// Cerrar sesión
+// cierre de sesion
 function logout() {
-    localStorage.removeItem("user"); // Elimina la sesión
-    window.location.href = "index.html"; // Redirige al login
+    localStorage.removeItem("user"); // funcion para cerrar sesion
+    window.location.href = "index.html"; // redirige al login
 }

@@ -1,0 +1,72 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d1d0d0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 150%;
+            max-width: 800px;
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 18px;
+            text-align: center;
+            margin-top: 80px;
+            box-shadow: 0 4px 6px rgb(121, 121, 121);
+        }
+        .header {
+            background: linear-gradient(to bottom, rgba(79, 79, 79, 0.3), transparent);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+        }
+        .header p {
+            color: rgb(64, 64, 64);
+        }
+        .btn {
+            background: rgb(255, 255, 255);
+            border: 1px solid black;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #e0e0e0;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group button {
+            background: white;
+            border: 1px solid black;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-group button:hover {
+            background: #e0e0e0;
+        }
+        .titulo {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-weight: bold;
+        }
+        .proyecto {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-weight: bold;
+            color: rgb(36, 85, 85);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            size:0vw
+        }
