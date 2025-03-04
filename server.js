@@ -11,10 +11,12 @@ app.use(express.json());
 app.use(cors());
 
 // coneccion a mongodb
-mongoose
-  .connect("mongodb://localhost:27017/", { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB conectado"))
-  .catch((err) => console.error("Error al conectar a MongoDB", err));
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log("Conectado a MongoDB local"))
+.catch(err => console.error("Error conectando a MongoDB:", err));
+
 
 // ruta del log in
 app.post("/login", async (req, res) => {
