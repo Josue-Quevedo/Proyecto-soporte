@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9d9d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: black;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Ingresa tu Email para un correo de recuperación</h3>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <button onclick="enviarRecuperacion()">Enviar correo de recuperación</button>
+    </div>
+
+    <script>
+        function enviarRecuperacion() {
+            const email = document.getElementById("email").value;
+
+            if (!email) {
+                alert("Por favor, ingresa un correo válido.");
+                return;
+            }
+
+            fetch("http://localhost:3000/recuperar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                window.location.href = "index.html"; // redirige al log in despues de enviar el emalil
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
